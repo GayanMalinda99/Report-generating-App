@@ -1,0 +1,9 @@
+Email - softwareconstructionteam5@gmail.com
+
+Password - SCTeam#5
+
+Mailgun Password - Engineering#5
+
+Mailgun domain - sandboxda9c4b996ef341898279b43c284bd6c0.mailgun.org
+
+Mailgun API Key - 4ac88df3a5f251caaf471f91c1e5d18a-dbdfb8ff-8ca2f010
