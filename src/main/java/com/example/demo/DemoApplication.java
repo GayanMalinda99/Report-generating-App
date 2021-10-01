@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import kong.unirest.JsonNode;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -19,8 +21,9 @@ public class DemoApplication {
         String sql = "INSERT INTO users (first_name, last_name) VALUES ('Kamal','supun')";
 */
     EmailSender emailSender = new EmailSender() ;
-    emailSender.sendSimpleMessage() ;
-
+    String emailAddress = emailSender.getEmail() ;
+    JsonNode jsonNode =  emailSender.sendSimpleMessage(emailAddress) ;
+        System.out.println(jsonNode.toString());
     }
 
 
