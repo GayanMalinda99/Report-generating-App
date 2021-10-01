@@ -22,8 +22,14 @@ public class DemoApplication {
 */
     EmailSender emailSender = new EmailSender() ;
     String emailAddress = emailSender.getEmail() ;
-    JsonNode jsonNode =  emailSender.sendSimpleMessage(emailAddress) ;
-        System.out.println(jsonNode.toString());
+    boolean emailVerified = emailSender.verifyEmail(emailAddress) ;
+    if(emailVerified){
+        JsonNode jsonNode =  emailSender.sendSimpleMessage(emailAddress) ;
+        System.out.println("Email sent successfully");
+    }else{
+        System.out.println("Can not send email. Email not verifed");
+    }
+
     }
 
 
