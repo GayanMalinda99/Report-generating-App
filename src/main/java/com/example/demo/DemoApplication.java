@@ -1,10 +1,11 @@
 package com.example.demo;
 
-import kong.unirest.JsonNode;
+import com.example.demo.sendingEmail.EmailAddressGetter;
+import com.example.demo.sendingEmail.EmailSender;
+import com.example.demo.sendingEmail.EmailVerifier;
+import com.example.demo.sendingEmail.NetConnectionChecker;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 
 
@@ -20,21 +21,27 @@ public class DemoApplication {
 
         String sql = "INSERT INTO users (first_name, last_name) VALUES ('Kamal','supun')";
 */
-    EmailSender emailSender = new EmailSender() ;
-    String emailAddress = emailSender.getEmail() ;
-    boolean emailVerified = emailSender.verifyEmail(emailAddress) ;
-    boolean internetAvailable = emailSender.netIsAvailable() ;
-    if(emailVerified){
-        if(internetAvailable){
-            emailSender.sendSimpleMessage(emailAddress) ;
-            System.out.println("Email sent successfully");
-        }else{
-            System.out.println("Can not send email. Internt connection problem occured");
+        EmailAddressGetter emailAddressGetter = new EmailAddressGetter() ;
+        String emailAddress = emailAddressGetter.getEmail();
+        EmailVerifier emailVerifier = new EmailVerifier() ;
+        boolean emailVerified = emailVerifier.verifyEmail(emailAddress);
+        NetConnectionChecker netConnectionChecker = new NetConnectionChecker() ;
+        boolean internetAvailable = netConnectionChecker.netIsAvailable();
+
+        if (emailVerified) {
+            if (internetAvailable) {
+                EmailSender emailSender = new EmailSender();
+                emailSender.sendSimpleMessage(emailAddress);
+                System.out.println("Email sent successfully");
+            } else {
+                System.out.println("Can not send email. Internet connection problem occurred");
+            }
+        } else {
+            System.out.println("Can not send email. Email not verified");
         }
-    }else {
-        System.out.println("Can not send email. Email not verifed");
-    }
 
     }
+
+
 
 }
