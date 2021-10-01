@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class DemoApplication {
 
     public static void main(String[] args) throws IOException, SQLException {
-
+/*
         String jbdcURL="jdbc:mysql://localhost:3306/university";
         String username="root";
         String password="";
@@ -17,7 +17,9 @@ public class DemoApplication {
         Connection connection = DriverManager.getConnection(jbdcURL,username,password);
 
         String sql = "INSERT INTO users (first_name, last_name) VALUES ('Kamal','supun')";
-
+*/
+    EmailSender emailSender = new EmailSender() ;
+    emailSender.sendSimpleMessage() ;
 
     }
 
