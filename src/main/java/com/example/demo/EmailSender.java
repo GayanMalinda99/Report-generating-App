@@ -5,6 +5,10 @@ import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
 import kong.unirest.UnirestException;
 import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.Scanner;
 
 public class EmailSender {
@@ -18,6 +22,7 @@ public class EmailSender {
         String email = scanner.nextLine() ;
         return email ;
     }
+
 
     public boolean verifyEmail(String userEmail){
         if(userEmail.equals(verfiedEmails[0])){
@@ -37,5 +42,17 @@ public class EmailSender {
                 .field("attachment", new File("Report.xlsx"))
                 .asJson();
         return request.getBody();
+    }
+
+    public  boolean netIsAvailable() {
+        try {
+            final URL url = new URL("http://www.google.com");
+            final URLConnection conn = url.openConnection();
+            conn.connect();
+            conn.getInputStream().close();
+            return true;
+        } catch (IOException e) {
+            return false;
+        }
     }
 }

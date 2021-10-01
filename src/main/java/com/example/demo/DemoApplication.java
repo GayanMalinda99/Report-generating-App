@@ -23,14 +23,18 @@ public class DemoApplication {
     EmailSender emailSender = new EmailSender() ;
     String emailAddress = emailSender.getEmail() ;
     boolean emailVerified = emailSender.verifyEmail(emailAddress) ;
+    boolean internetAvailable = emailSender.netIsAvailable() ;
     if(emailVerified){
-        JsonNode jsonNode =  emailSender.sendSimpleMessage(emailAddress) ;
-        System.out.println("Email sent successfully");
-    }else{
+        if(internetAvailable){
+            emailSender.sendSimpleMessage(emailAddress) ;
+            System.out.println("Email sent successfully");
+        }else{
+            System.out.println("Can not send email. Internt connection problem occured");
+        }
+    }else {
         System.out.println("Can not send email. Email not verifed");
     }
 
     }
-
 
 }
