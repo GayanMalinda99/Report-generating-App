@@ -2,6 +2,6 @@ package com.kelaniya.uni.g5.reports;
 
 public interface Report {
 
-    void execute() throws InvalidReportException;
+    void execute(String startingTime, String endingTime) throws InvalidReportException;
 
 }
