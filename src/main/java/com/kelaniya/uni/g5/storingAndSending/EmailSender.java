@@ -14,6 +14,7 @@ public class EmailSender {
     private  final String DOMAIN_NAME = "sandboxda9c4b996ef341898279b43c284bd6c0.mailgun.org";
     private  final String API_KEY = "4ac88df3a5f251caaf471f91c1e5d18a-dbdfb8ff-8ca2f010";
     private  final String[] verfiedEmails = {"tharakaariyarathna04@gmail.com"} ;
+   // private final String[] VerfiedEmails={"sachithrabandara49@gmail.com"};
 
     public String getEmail(){
         System.out.println("Enter the email address");
