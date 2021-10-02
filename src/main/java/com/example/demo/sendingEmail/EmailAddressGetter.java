@@ -4,10 +4,9 @@ import java.util.Scanner;
 
 public class EmailAddressGetter {
 
-    Scanner scanner = new Scanner(System.in);
-
     public String getEmail() {
-        System.out.println("Enter the email address");
+        System.out.println("Enter email address");
+        Scanner scanner = new Scanner(System.in);
         String email = scanner.nextLine();
         return email;
     }

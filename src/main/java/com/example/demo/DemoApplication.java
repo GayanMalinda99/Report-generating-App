@@ -1,9 +1,8 @@
 package com.example.demo;
 
-import com.example.demo.sendingEmail.EmailAddressGetter;
-import com.example.demo.sendingEmail.EmailSender;
-import com.example.demo.sendingEmail.EmailVerifier;
-import com.example.demo.sendingEmail.NetConnectionChecker;
+import com.example.demo.sendingEmail.*;
+import com.example.demo.ui.CmdLineUI;
+import kong.unirest.JsonNode;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -23,25 +22,75 @@ public class DemoApplication {
 */
         EmailAddressGetter emailAddressGetter = new EmailAddressGetter() ;
         String emailAddress = emailAddressGetter.getEmail();
-        EmailVerifier emailVerifier = new EmailVerifier() ;
-        boolean emailVerified = emailVerifier.verifyEmail(emailAddress);
-        NetConnectionChecker netConnectionChecker = new NetConnectionChecker() ;
-        boolean internetAvailable = netConnectionChecker.netIsAvailable();
 
-        if (emailVerified) {
-            if (internetAvailable) {
-                EmailSender emailSender = new EmailSender();
-                emailSender.sendSimpleMessage(emailAddress);
-                System.out.println("Email sent successfully");
-            } else {
-                System.out.println("Can not send email. Internet connection problem occurred");
-            }
-        } else {
-            System.out.println("Can not send email. Email not verified");
-        }
+        EmailSender emailSender = new EmailSender();
+        JsonNode jsonNode =  emailSender.sendSimpleMessage(emailAddress);
+
+        EndMessage endMessage = new EndMessage();
+        String endText = endMessage.showEndText(jsonNode.toString()) ;
+
+        CmdLineUI cmdLineUI = new CmdLineUI() ;
+        cmdLineUI.showMessege(endText);
 
     }
 
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
