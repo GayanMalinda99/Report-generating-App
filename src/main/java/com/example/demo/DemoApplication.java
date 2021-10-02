@@ -1,6 +1,10 @@
 package com.example.demo;
 
 import com.example.demo.sendingEmail.*;
+import com.example.demo.sendingEmail.endMessage.EndMessage;
+import com.example.demo.sendingEmail.endMessage.MailgunEndMessage;
+import com.example.demo.sendingEmail.sendEmail.EmailSender;
+import com.example.demo.sendingEmail.sendEmail.MailgunEmailSender;
 import com.example.demo.ui.CmdLineUI;
 import com.example.demo.ui.UI;
 
@@ -21,17 +25,12 @@ public class DemoApplication {
         String sql = "INSERT INTO users (first_name, last_name) VALUES ('Kamal','supun')";
 */
         EmailAddressGetter emailAddressGetter = new EmailAddressGetter() ;
-        String emailAddress = emailAddressGetter.getEmail();
-
-        EmailSender emailSender = new MailgunEmailSender();
-        String emailStatus = emailSender.sendSimpleMessage(emailAddress);
-
+        EmailSender emailSender = new MailgunEmailSender("Report.xlsx");
         EndMessage endMessage = new MailgunEndMessage();
-        String endText = endMessage.showEndText(emailStatus) ;
-
-        UI cmdLineUI = new CmdLineUI() ;
-        cmdLineUI.showMessege(endText);
-
+        UI ui = new CmdLineUI() ;
+        EmailSendingOperation emailSendingOperation = new EmailSendingOperation(emailAddressGetter,emailSender,
+                                endMessage,ui) ;
+        emailSendingOperation.execute();
     }
 
 
