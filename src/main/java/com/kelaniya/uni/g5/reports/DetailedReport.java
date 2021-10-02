@@ -18,7 +18,7 @@ public class DetailedReport implements Report {
     public void execute(String startingTime, String endingTime){
 
         try {
-            String file_name="E:\\Desktop\\SCGroup\\GenaratePDF\\test.pdf";
+            String file_name="E:\\Desktop\\SCGroup\\GenaratePDF\\report.pdf";
             Document document = new Document();
             PdfWriter.getInstance(document,new FileOutputStream(file_name));
             document.open();

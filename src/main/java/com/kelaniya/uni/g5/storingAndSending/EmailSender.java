@@ -40,7 +40,7 @@ public class EmailSender {
                 .queryString("to", email)
                 .queryString("subject", "Report")
                 .queryString("text", "Report")
-                .field("attachment", new File("Report.xlsx"))
+                .field("attachment", new File("E:\\Desktop\\SCGroup\\GenaratePDF\\report.pdf"))
                 .asJson();
         return request.getBody();
     }

@@ -19,12 +19,30 @@ public class Main {
         GetEndDate endDate = new GetEndDate(args);
         GetRequestMethod requestMethod = new GetRequestMethod(args);
         GetEmail getEmail = new GetEmail(args);
-        DetailedReport detailedReport=new DetailedReport();
-
-        
-        detailedReport.execute(startDate.getStartDate(),endDate.getEndDate());
+        //DetailedReport detailedReport=new DetailedReport();
 
 
+        //detailedReport.execute(startDate.getStartDate(),endDate.getEndDate());
+        System.out.println(reportType.validateType());
+
+        if (reportType.validateType().equals("Summery"))
+        {
+            SummaryReport summaryReport = new SummaryReport();
+
+            summaryReport.execute(startDate.getStartDate(), endDate.getEndDate());
+
+        }
+        else if (reportType.validateType().equals("Detailed"))
+        {
+            DetailedReport detailedReport=new DetailedReport();
+
+            detailedReport.execute(startDate.getStartDate(),endDate.getEndDate());
+
+        }
+        else
+        {
+            System.out.println("Invalid Argument for Report Type");
+        }
 
 
 
