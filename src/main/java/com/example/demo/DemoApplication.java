@@ -2,7 +2,7 @@ package com.example.demo;
 
 import com.example.demo.sendingEmail.*;
 import com.example.demo.ui.CmdLineUI;
-import kong.unirest.JsonNode;
+import com.example.demo.ui.UI;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -23,13 +23,13 @@ public class DemoApplication {
         EmailAddressGetter emailAddressGetter = new EmailAddressGetter() ;
         String emailAddress = emailAddressGetter.getEmail();
 
-        EmailSender emailSender = new EmailSender();
-        JsonNode jsonNode =  emailSender.sendSimpleMessage(emailAddress);
+        EmailSender emailSender = new MailgunEmailSender();
+        String emailStatus = emailSender.sendSimpleMessage(emailAddress);
 
-        EndMessage endMessage = new EndMessage();
-        String endText = endMessage.showEndText(jsonNode.toString()) ;
+        EndMessage endMessage = new MailgunEndMessage();
+        String endText = endMessage.showEndText(emailStatus) ;
 
-        CmdLineUI cmdLineUI = new CmdLineUI() ;
+        UI cmdLineUI = new CmdLineUI() ;
         cmdLineUI.showMessege(endText);
 
     }
