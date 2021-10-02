@@ -3,7 +3,7 @@ package com.kelaniya.uni.g5.inputs.IO;
 public class GetReportType {
     private String[] args = new String[0];
 
-    public GetReportType(String[] arg) {
+    public GetReportType(String[] args) {
         this.args = args;
     }
 
