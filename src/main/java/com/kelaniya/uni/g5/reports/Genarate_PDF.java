@@ -1,12 +1,13 @@
-package com.pdf;
+package com.kelaniya.uni.g5.reports;
 
-import com.dynamic.DBConnection;
+//import com.dynamic.DBConnection;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
+import com.kelaniya.uni.g5.repository.DBConnection;
 
 import java.io.FileOutputStream;
 import java.sql.Connection;
