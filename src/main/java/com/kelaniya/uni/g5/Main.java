@@ -1,5 +1,6 @@
 package com.kelaniya.uni.g5;
 
+import com.kelaniya.uni.g5.inputs.IO.GetReportType;
 import com.kelaniya.uni.g5.inputs.Inputs;
 import com.kelaniya.uni.g5.inputs.InvalidInputException;
 import com.kelaniya.uni.g5.inputs.UserInputs;
@@ -10,19 +11,21 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException, InvalidInputException {
 
-        Inputs inputs = new UserInputs();
+        //Inputs inputs = new UserInputs();
 
-        String reportType = inputs.getReportType();
+        /*String reportType = inputs.getReportType();
         String startingDate = inputs.getStartingDate();
         String endingDate = inputs.getEndingDate();
         String sendingType = inputs.getSendingType();
 
         OperationFactory operationFactory = new OperationFactory();
         operationFactory.getInstance(reportType);
+      */
 
 
-
-
+       GetReportType getReportType=new GetReportType(args);
+       System.out.println(getReportType.validateType());
+        //System.out.println(args[0]);
 
     }
 }
