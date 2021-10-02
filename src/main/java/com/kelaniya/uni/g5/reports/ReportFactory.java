@@ -2,7 +2,7 @@ package com.kelaniya.uni.g5.reports;
 
 public class ReportFactory {
 
-    public Report getInstance(String reportType, String startingTime, String endingTime){
+    public Report getInstance(String reportType){
 
         //Decision Making + Coordination
         Report report = null;
