@@ -6,7 +6,6 @@ import com.kelaniya.uni.g5.inputs.UserInputs;
 import com.kelaniya.uni.g5.reports.OperationFactory;
 
 import java.io.IOException;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException, InvalidInputException {
@@ -19,7 +18,7 @@ public class Main {
         String sendingType = inputs.getSendingType();
 
         OperationFactory operationFactory = new OperationFactory();
-        operationFactory.getInstance(reportType, startingDate, endingDate);
+        operationFactory.getInstance(reportType);
 
 
 

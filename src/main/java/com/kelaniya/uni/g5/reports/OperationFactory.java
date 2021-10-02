@@ -2,7 +2,7 @@ package com.kelaniya.uni.g5.reports;
 
 public class OperationFactory {
 
-    public void getInstance(String reportType, String startingTime, String endingTime){
+    public Report getInstance(String reportType){
 
         //Decision Making + Coordination
         Report report = null;
@@ -14,6 +14,7 @@ public class OperationFactory {
 
 //        return report;
 
+        return report;
     }
 
 
