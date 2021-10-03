@@ -1,11 +1,9 @@
 package com.kelaniya.uni.g5.reports;
 
-import com.kelaniya.uni.g5.storingAndSending.EmailSender;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.Assert.*;
 
 public class DetailedReportTest {
 

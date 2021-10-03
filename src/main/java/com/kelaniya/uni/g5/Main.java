@@ -1,17 +1,13 @@
 package com.kelaniya.uni.g5;
 
-import com.kelaniya.uni.g5.inputs.IO.*;
-import com.kelaniya.uni.g5.inputs.Inputs;
-import com.kelaniya.uni.g5.inputs.InvalidInputException;
-import com.kelaniya.uni.g5.inputs.UserInputs;
+import com.kelaniya.uni.g5.inputs.*;
 import com.kelaniya.uni.g5.reports.DetailedReport;
-import com.kelaniya.uni.g5.reports.OperationFactory;
 import com.kelaniya.uni.g5.reports.SummaryReport;
 
 import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) throws IOException, InvalidInputException {
+    public static void main(String[] args) throws IOException{
 
 
         GetReportType reportType = new GetReportType(args);
