@@ -6,17 +6,16 @@ import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.*;
 
-public class GetEndDateTest {
+public class GetReportTypeTest {
 
     @Test
-    public void should_return_GetEndDate_object(){
+    public void should_return_GetReportType_object(){
         String []args={"Summary 2012-12-12 2021-12-12 File sachithrabandara49@gmail.com"};
-        GetEndDate getEndDate=new GetEndDate(args);
-        //verify that the detailReport object is an instance of GetEndDate class
-        assertThat(getEndDate,instanceOf(GetEndDate.class));
+        GetReportType getReportType=new GetReportType(args);
+        //verify that the getReportType object is an instance of GetReportType class
+        assertThat(getReportType,instanceOf(GetReportType.class));
 
     }
-
 
 
 

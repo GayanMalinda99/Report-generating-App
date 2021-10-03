@@ -4,8 +4,11 @@ public class GetEmail {
     private final String[] args;
 
     public GetEmail(String[] arguments) {
+
         this.args = arguments;
     }
+
+
 
     public String getEmail(){
 
