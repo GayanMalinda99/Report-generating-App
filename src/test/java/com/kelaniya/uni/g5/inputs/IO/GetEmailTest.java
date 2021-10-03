@@ -36,7 +36,7 @@ public class GetEmailTest {
     public void should_return_GetEmail_object(){
         String []args={"Summary 2012-12-12 2021-12-12 File sachithrabandara49@gmail.com"};
         GetEmail getEmail=new GetEmail(args);
-        //verify that the detailReport object is an instance of DetaildeReport class
+        //verify that the getEmail object is an instance of GetEmail class
         assertThat(getEmail,instanceOf(GetEmail.class));
 
     }
