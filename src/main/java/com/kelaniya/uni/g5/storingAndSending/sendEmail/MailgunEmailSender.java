@@ -8,9 +8,9 @@ import kong.unirest.UnirestException;
 import java.io.File;
 
 public class MailgunEmailSender implements EmailSender {
-    private final String YOUR_DOMAIN_NAME = "sandbox2210c82599094d47b68180f24547098b.mailgun.org";
-    private final String API_KEY = "c29c77f3bbe9210c09ee1ba1cd445e65-dbdfb8ff-d51f4f9c";
-    private final String sender = "issiwaraperera9912@gmail.com";
+    private final String YOUR_DOMAIN_NAME = "sandboxc5d382f298da44a4a6efda73711a7077.mailgun.org";
+    private final String API_KEY = "f3f2779e739843979a3577cb8ba557fd-dbdfb8ff-0f0cecf7";
+    private final String sender = "issikavinda@gmail.com";
     private final String filePath;
 
     public MailgunEmailSender(String filePath){

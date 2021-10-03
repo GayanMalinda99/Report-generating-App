@@ -72,7 +72,6 @@ public class SummaryReport implements Report {
                 document.add(new Paragraph(""));
             }
 
-
             document.add(new Paragraph("Inventory Summery"));
             document.add(new Paragraph(" "));
 
@@ -81,9 +80,7 @@ public class SummaryReport implements Report {
             preparedStatement=connection.prepareStatement(queryProducts);
             resultSet=preparedStatement.executeQuery();
 
-
             while (resultSet.next()) {
-
 
                 //add Table
 
@@ -101,9 +98,6 @@ public class SummaryReport implements Report {
                 PdfPCell c4 = new PdfPCell(new Phrase("product_availabla_qty"));
                 table.addCell(c4);
 
-
-
-
                 table.setHeaderRows(1);
 
                 table.addCell(resultSet.getString("product_id"));
@@ -117,9 +111,6 @@ public class SummaryReport implements Report {
                 document.add(new Paragraph(" "));
             }
 
-
-
-
             document.close();
 
             System.out.println("Summery Report Created");
@@ -128,8 +119,6 @@ public class SummaryReport implements Report {
         {
             System.err.println(e);
         }
-
-
 
     }
 
