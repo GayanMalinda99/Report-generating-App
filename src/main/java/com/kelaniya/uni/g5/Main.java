@@ -28,6 +28,8 @@ public class Main {
          System.out.println(reportType.validateType());
 
         if (reportType.validateType().equals("Summery"))
+
+        
         {
             SummaryReport summaryReport = new SummaryReport();
 
