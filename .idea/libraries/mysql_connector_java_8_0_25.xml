@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="mysql-connector-java-8.0.25">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../jar_files (1)/mysql-connector-java-8.0.25.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../jar_files/itextpdf-5.5.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
