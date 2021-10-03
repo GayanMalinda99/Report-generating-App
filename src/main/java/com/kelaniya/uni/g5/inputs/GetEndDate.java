@@ -1,4 +1,4 @@
-package com.kelaniya.uni.g5.inputs.IO;
+package com.kelaniya.uni.g5.inputs;
 
 public class GetEndDate {
     private final String[] args;

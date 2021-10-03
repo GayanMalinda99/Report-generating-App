@@ -1,17 +1,21 @@
 package com.kelaniya.uni.g5;
 
-import com.kelaniya.uni.g5.inputs.IO.*;
-import com.kelaniya.uni.g5.inputs.Inputs;
-import com.kelaniya.uni.g5.inputs.InvalidInputException;
-import com.kelaniya.uni.g5.inputs.UserInputs;
+import com.kelaniya.uni.g5.inputs.*;
+import com.kelaniya.uni.g5.inputs.*;
 import com.kelaniya.uni.g5.reports.DetailedReport;
-import com.kelaniya.uni.g5.reports.OperationFactory;
 import com.kelaniya.uni.g5.reports.SummaryReport;
+import com.kelaniya.uni.g5.storingAndSending.sendEmail.EmailSender;
+import com.kelaniya.uni.g5.storingAndSending.EmailSendingOperation;
+import com.kelaniya.uni.g5.storingAndSending.endMessage.EndMessage;
+import com.kelaniya.uni.g5.storingAndSending.endMessage.MailgunEndMessage;
+import com.kelaniya.uni.g5.storingAndSending.sendEmail.MailgunEmailSender;
+import com.kelaniya.uni.g5.ui.CmdLineUI;
+import com.kelaniya.uni.g5.ui.UI;
 
 import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) throws IOException, InvalidInputException {
+    public static void main(String[] args) throws IOException  {
 
 
         GetReportType reportType = new GetReportType(args);
@@ -19,11 +23,9 @@ public class Main {
         GetEndDate endDate = new GetEndDate(args);
         GetRequestMethod requestMethod = new GetRequestMethod(args);
         GetEmail getEmail = new GetEmail(args);
-        //DetailedReport detailedReport=new DetailedReport();
 
 
-        //detailedReport.execute(startDate.getStartDate(),endDate.getEndDate());
-        System.out.println(reportType.validateType());
+         System.out.println(reportType.validateType());
 
         if (reportType.validateType().equals("Summery"))
         {
@@ -44,8 +46,18 @@ public class Main {
             System.out.println("Invalid Argument for Report Type");
         }
 
+        if(requestMethod.getRequsetMethod().equals("Email"))
+        {
+
+            EmailSender emailSender = new MailgunEmailSender("E:\\Desktop\\SCGroup\\GenaratePDF\\report.pdf");
+            EndMessage endMessage = new MailgunEndMessage();
+            UI ui = new CmdLineUI() ;
+            EmailSendingOperation emailSendingOperation = new EmailSendingOperation(getEmail,emailSender,
+                    endMessage,ui) ;
+            emailSendingOperation.execute();
 
 
+        }
 
 
     }

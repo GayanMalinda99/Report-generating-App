@@ -77,7 +77,7 @@ public class DetailedReport implements Report {
 
             document.close();
 
-            System.out.println("Finish");
+            System.out.println("Detailed Report Created");
         }
         catch (Exception e)
         {

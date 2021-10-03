@@ -1,6 +1,6 @@
 package com.kelaniya.uni.g5.reports;
 
-import com.kelaniya.uni.g5.storingAndSending.EmailSender;
+import com.kelaniya.uni.g5.storingAndSending.sendEmail.EmailSender;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.instanceOf;

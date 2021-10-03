@@ -122,7 +122,7 @@ public class SummaryReport implements Report {
 
             document.close();
 
-            System.out.println("Finish");
+            System.out.println("Summery Report Created");
         }
         catch (Exception e)
         {
